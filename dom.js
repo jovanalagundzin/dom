@@ -100,7 +100,7 @@ lista[1].nextElementSibling.style.backgroundColor="lightblue"
 parentElement.parentElement.style.backgroundColor="orange"
 */
 
-let newDiv=document.createElement("div");
+/*let newDiv=document.createElement("div");
 let textNode=document.createTextNode("Napravio sam novi element");
 newDiv.appendChild(textNode);
 
@@ -137,5 +137,29 @@ newitems.appendChild(textli));
 let items=document.getElementById("items");
 console.log(items.childNodes)
 items.insertBefore(newli, items.lastChild.nextSibling);
+}*/
+/*button.addEventlistener("click",addNewItemTolist)
+let buttons=
+let radiNesto=function(event){
+  console.log(event)
+  console.log(event.target)
+  console.log(event.target.id)
+  console.log(event.offsetx)
 }
-button.addEventlistener("click",addNewItemTolist)
+buttons.addEventlistener("click",radiNesto)
+*/
+let div = document.getElementById("nesto");
+let changeColor = function (event) {
+  let bojaRGB = "rgb(" + event.offset + "," + event.offsety + ",40)";
+  event.target.style.backgroundColor = bojaRGB;
+};
+div.addEventlistener("mousemove", changeColor);
+
+let celaStrana = document.querySelector("*");
+let bojaStranice = function (event) {
+  let red = Math.floor(event.pageX / (window.innerWidth / 255 + 1));
+  let green = Math.floor(event.pageY / (window.innerHeight / 255 + 1));
+  let bojaRGB = "rgb(" + red + "," + green + "60)";
+  celaStrana.style.backgroundColor = bojaRGB;
+};
+celaStrana.addEventListener("mousemove", bojaStranice);
